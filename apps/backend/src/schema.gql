@@ -1,0 +1,15 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Item {
+  completed: Boolean
+  description: String
+  id: Int!
+  title: String
+}
+
+type Query {
+  item(id: Int!): Item!
+  items(skip: Int! = 0, take: Int! = 25): [Item!]!
+}
