@@ -5,22 +5,22 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 const GET_ITEMS = gql`
-    query GetItems {
-        items {
-            id
-            title
-            description
-            completed
-        }
+  query GetItems {
+    items {
+      id
+      title
+      description
+      completed
     }
+  }
 `
 
 function App() {
   const [count, setCount] = useState(0)
   const { loading, error, data } = useQuery(GET_ITEMS)
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error : {error.message}</p>;
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error : {error.message}</p>
 
   return (
     <>
@@ -44,14 +44,12 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-        {
-            data.items.map((item: any) => (
-                <div>
-                    <p>{item.id}</p>
-                    <p>{item.title}</p>
-                </div>
-            ))
-        }
+      {data.items.map((item: any) => (
+        <div>
+          <p>{item.id}</p>
+          <p>{item.title}</p>
+        </div>
+      ))}
     </>
   )
 }

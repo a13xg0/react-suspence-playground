@@ -1,9 +1,8 @@
-import {Module} from "@nestjs/common";
-import {ItemsResolver} from "./items.resolver";
-import {ItemsService} from "./items.service";
+import { Module } from '@nestjs/common'
+import { ItemsResolver } from './items.resolver'
+import { ItemsService } from './items.service'
 
 @Module({
-    providers: [ItemsResolver, ItemsService],
+  providers: [ItemsResolver, ItemsService],
 })
-
 export class ItemsModule {}

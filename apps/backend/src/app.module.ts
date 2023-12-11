@@ -1,10 +1,10 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import {ApolloDriver, ApolloDriverConfig} from "@nestjs/apollo";
-import {GraphQLModule} from "@nestjs/graphql";
-import { join } from 'node:path';
-import {ItemsModule} from "./items/items.module";
+import { Module } from '@nestjs/common'
+import { AppController } from './app.controller'
+import { AppService } from './app.service'
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'
+import { GraphQLModule } from '@nestjs/graphql'
+import { join } from 'node:path'
+import { ItemsModule } from './items/items.module'
 
 @Module({
   controllers: [AppController],
