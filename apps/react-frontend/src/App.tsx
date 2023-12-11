@@ -45,7 +45,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       {data.items.map((item: any) => (
-        <div>
+        <div key={item.id}>
           <p>{item.id}</p>
           <p>{item.title}</p>
         </div>
