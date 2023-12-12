@@ -1,6 +1,6 @@
 import { useSuspenseQuery } from '@apollo/client'
 import GET_ITEMS from '../../graphql/GetItems.graphql.ts'
-import styles from '../ClassicLoad/ClassicLoad.module.css'
+import styles from './SuspenseLoad.module.css'
 import { Suspense } from 'react'
 
 function SuspenseLoad() {
