@@ -10,6 +10,7 @@ function ClassicLoad({ skip = 0, take = 5 }: ClassicLoadProps) {
       skip,
       take,
     },
+    returnPartialData: true,
   })
 
   if (loading) return <Loading />
