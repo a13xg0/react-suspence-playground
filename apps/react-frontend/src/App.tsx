@@ -14,6 +14,18 @@ function App() {
           <SuspenseLoad />
         </Suspense>
       </div>
+      <div className={styles.loadContainer}>
+        <div className={styles.loadStack}>
+          <ClassicLoad />
+          <ClassicLoad skip={5} take={5} />
+        </div>
+        <Suspense fallback={<Loading />}>
+          <div className={styles.loadStack}>
+            <SuspenseLoad />
+            <SuspenseLoad skip={5} take={5} />
+          </div>
+        </Suspense>
+      </div>
     </div>
   )
 }
