@@ -21,7 +21,7 @@ export class ItemsService {
   }
 
   async findAll(itemsArgs: ItemsArgs): Promise<Item[]> {
-    return this.items.slice(itemsArgs.skip, itemsArgs.take)
+    return this.items.slice(itemsArgs.skip, itemsArgs.skip + itemsArgs.take)
   }
 
   async remove(id: string): Promise<boolean> {
