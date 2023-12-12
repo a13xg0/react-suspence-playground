@@ -3,8 +3,8 @@
     color: white;
     display: inline-block;
     position: relative;
-    width: 40px;
-    height: 4px;
+    width: 80px;
+    height: 80px;
 }
 .ldsSpinner div {
     transform-origin: 20px 20px;
