@@ -1,11 +1,12 @@
 import styles from './ClassicLoad.module.css'
 import { useQuery } from '@apollo/client'
 import GET_ITEMS from '../../graphql/GetItems.graphql.ts'
+import Loading from '../Loading/Loading.component.tsx'
 
 function ClassicLoad() {
   const { loading, error, data } = useQuery(GET_ITEMS)
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <Loading />
   if (error) return <p>Error : {error.message}</p>
 
   return (

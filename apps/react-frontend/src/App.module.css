@@ -6,4 +6,6 @@
 .loadContainer {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  min-width: 600px;
 }
