@@ -11,12 +11,13 @@ interface Data {
 }
 
 interface Variables {
-  id: string
+  skip: number
+  take: number
 }
 
 export default gql`
-  query GetItems {
-    items {
+  query GetItems($skip: Int = 0, $take: Int = 5) {
+    items(skip: $skip, take: $take) {
       id
       title
       description
