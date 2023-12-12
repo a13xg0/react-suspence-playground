@@ -4,15 +4,13 @@ import styles from './SuspenseLoad.module.css'
 import { SuspendLoadProps } from './SuspenseLoad.types.ts'
 
 function SuspenseLoad({ skip = 0, take = 5 }: SuspendLoadProps) {
-  const { data, error } = useSuspenseQuery(GET_ITEMS, {
+  const { data } = useSuspenseQuery(GET_ITEMS, {
     variables: {
       skip,
       take,
     },
     returnPartialData: true,
   })
-
-  if (error) return <p>Error : {error.message}</p>
 
   return (
     <ul className={styles.container}>
