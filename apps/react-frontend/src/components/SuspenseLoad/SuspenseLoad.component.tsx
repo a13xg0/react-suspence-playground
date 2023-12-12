@@ -1,9 +1,15 @@
 import { useSuspenseQuery } from '@apollo/client'
 import GET_ITEMS from '../../graphql/GetItems.graphql.ts'
 import styles from './SuspenseLoad.module.css'
+import { SuspendLoadProps } from './SuspenseLoad.types.ts'
 
-function SuspenseLoad() {
-  const { data, error } = useSuspenseQuery(GET_ITEMS)
+function SuspenseLoad({ skip = 0, take = 5 }: SuspendLoadProps) {
+  const { data, error } = useSuspenseQuery(GET_ITEMS, {
+    variables: {
+      skip,
+      take,
+    },
+  })
 
   if (error) return <p>Error : {error.message}</p>
 
