@@ -1,5 +1,5 @@
 import { useGraphqlItemsLoad } from './ClassicLoad.hooks.ts'
-import styles from './ClassiLoad.module.css'
+import styles from './ClassicLoad.module.css'
 
 function ClassicLoad() {
   const { loading, error, data } = useGraphqlItemsLoad()
