@@ -1,15 +1,6 @@
-import { useQuery, gql } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 
-const GET_ITEMS = gql`
-  query GetItems {
-    items {
-      id
-      title
-      description
-      completed
-    }
-  }
-`
+import GET_ITEMS from '../../graphql/GetItems.graphql.ts'
 
 export function useGraphqlItemsLoad() {
   const { loading, error, data } = useQuery(GET_ITEMS)
