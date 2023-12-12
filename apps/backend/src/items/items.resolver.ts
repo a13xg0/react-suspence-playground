@@ -2,6 +2,7 @@ import { Item } from './models/items.model'
 import { Args, Int, Query, Resolver } from '@nestjs/graphql'
 import { ItemsService } from './items.service'
 import { ItemsArgs } from './dto/items.args'
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 @Resolver((of) => Item)
 export class ItemsResolver {
@@ -14,6 +15,7 @@ export class ItemsResolver {
 
   @Query((returns) => [Item])
   async items(@Args() itemsArgs: ItemsArgs): Promise<Item[]> {
+    await delay(2000)
     return this.itemsService.findAll(itemsArgs)
   }
 }
