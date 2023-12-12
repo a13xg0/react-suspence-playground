@@ -8,12 +8,14 @@ import Loading from './components/Loading/Loading.component.tsx'
 function App() {
   return (
     <div className={styles.container}>
+      <h2>Single component</h2>
       <div className={styles.loadContainer}>
         <ClassicLoad />
         <Suspense fallback={<Loading />}>
           <SuspenseLoad />
         </Suspense>
       </div>
+      <h2>Stack of components</h2>
       <div className={styles.loadContainer}>
         <div className={styles.loadStack}>
           <ClassicLoad />
