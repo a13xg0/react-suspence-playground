@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common'
+import { Injectable, NotFoundException } from '@nestjs/common'
 import { Item } from './models/items.model'
 import { NewItemInput } from './dto/new-item.input'
 import { ItemsArgs } from './dto/items.args'
@@ -21,6 +21,9 @@ export class ItemsService {
   }
 
   async findAll(itemsArgs: ItemsArgs): Promise<Item[]> {
+    if (itemsArgs.skip > this.items.length) {
+      throw new NotFoundException()
+    }
     return this.items.slice(itemsArgs.skip, itemsArgs.skip + itemsArgs.take)
   }
 
