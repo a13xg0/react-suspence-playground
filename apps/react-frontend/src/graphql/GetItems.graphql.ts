@@ -1,4 +1,18 @@
-import { gql } from '@apollo/client'
+import { gql, TypedDocumentNode } from '@apollo/client'
+interface Data {
+  items: [
+    {
+      id: string
+      title: string
+      description: string
+      completed: boolean
+    },
+  ]
+}
+
+interface Variables {
+  id: string
+}
 
 export default gql`
   query GetItems {
@@ -9,4 +23,4 @@ export default gql`
       completed
     }
   }
-`
+` as TypedDocumentNode<Data, Variables>
