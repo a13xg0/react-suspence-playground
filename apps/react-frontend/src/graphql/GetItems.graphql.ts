@@ -10,9 +10,9 @@ interface Data {
   ]
 }
 
-interface Variables {
-  skip: number
-  take: number
+export interface Variables {
+  skip?: number
+  take?: number
 }
 
 export default gql`
