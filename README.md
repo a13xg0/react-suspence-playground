@@ -14,7 +14,7 @@ pnpm i
 ```
 3. Run examples
 ```bash
-pnpm lerna run strt
+pnpm lerna run start
 ```
 4. Open http://127.0.0.1:5173 in your browser
 
